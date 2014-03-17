@@ -8,7 +8,7 @@
 	:homepage             <https://metacpan.org/release/Types-DateTime>;
 	:download-page        <https://metacpan.org/release/Types-DateTime>;
 	:bug-database         <http://rt.cpan.org/Dist/Display.html?Queue=Types-DateTime>;
-#	:repository           [ a :GitRepository; :browse <https://github.com/tobyink/p5-types-datetime> ];
+	:repository           [ a :GitRepository; :browse <https://github.com/tobyink/p5-types-datetime> ];
 	:created              2014-03-16;
 	:license              <http://dev.perl.org/licenses/>;
 	:maintainer           cpan:TOBYINK;
