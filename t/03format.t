@@ -4,7 +4,7 @@
 
 =head1 PURPOSE
 
-Test that Types::DateTime compiles.
+Test that C<< Format[`a] >> works.
 
 =head1 AUTHOR
 

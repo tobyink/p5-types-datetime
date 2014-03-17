@@ -127,7 +127,7 @@ __PACKAGE__->meta->add_coercion({
 	type_coercion_map  => [
 		DateTime->coercibles,
 		q{$_->iso8601},
-	];
+	],
 });
 
 1;
