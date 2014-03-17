@@ -81,12 +81,27 @@ __PACKAGE__->meta->add_coercion({
 	name               => 'Format',
 	type_constraint    => DateTime,
 	coercion_generator => sub {
-		my $format = $_[2];
+		my ($self, $target, $format) = @_;
 		$format = use_module("DateTime::Format::$format")->new
 			unless ref($format);
+		
+		my $timezone;
+		if ($target->is_a_type_of(DateTimeWithZone))
+		{
+			my ($paramd_type) = grep {
+				$_->is_parameterized and $_->parent==DateTimeWithZone
+			} ($target, $target->parents);
+			$timezone = TimeZone->assert_coerce($paramd_type->type_parameter)
+				if $paramd_type;
+		}
+		
 		return (
 			Str,
-			sub { $format->parse_datetime($_) },
+			sub {
+				my $dt = $format->parse_datetime($_);
+				$dt->set_time_zone($timezone) if $timezone;
+				$dt;
+			},
 		);
 	},
 });

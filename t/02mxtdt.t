@@ -4,7 +4,8 @@
 
 =head1 PURPOSE
 
-Tests stolen from L<MooseX::Types::DateTime>.
+Tests stolen from L<MooseX::Types::DateTime>, and slighty adapted to
+L<Types::DateTime>.
 
 =head1 AUTHOR
 
@@ -21,12 +22,7 @@ it and/or modify it under the same terms as Perl itself.
 
 =cut
 
-use strict;
-use warnings;
-use Test::More;
-use Test::Requires { Moose => '2.0600' };
-use Test::Fatal;
-
+use Test::Modern -requires => { Moose => '2.0600' };
 use Moose::Util::TypeConstraints;
 
 {

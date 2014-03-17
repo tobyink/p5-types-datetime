@@ -3,7 +3,15 @@
 @prefix : <http://ontologi.es/doap-deps#>.
 
 `Types-DateTime`
-	:test-requirement       [ :on "Test::More 0.96"^^:CpanId ];
+	:runtime-requirement    [ :on "Type::Tiny 0.041"^^:CpanId ];
+	:runtime-requirement    [ :on "DateTime"^^:CpanId ];
+	:runtime-requirement    [ :on "DateTime::Duration"^^:CpanId ];
+	:runtime-requirement    [ :on "DateTime::Locale"^^:CpanId ];
+	:runtime-requirement    [ :on "DateTime::TimeZone"^^:CpanId ];
+	:runtime-requirement    [ :on "Module::Runtime"^^:CpanId ];
+	:test-requirement       [ :on "Test::Modern"^^:CpanId ];
+	:test-recommendation    [ :on "Moose 2.06"^^:CpanId ];
+	:test-recommendation    [ :on "DateTime::Format::ISO8601 0.06"^^:CpanId ];
 	:develop-recommendation [ :on "Dist::Inkt 0.001"^^:CpanId ];
 	.
 
