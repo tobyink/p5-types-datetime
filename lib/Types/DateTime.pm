@@ -51,8 +51,8 @@ coerce Locale,
 declare DateTimeWithZone,
 	as         DateTime,
 	coercion   => 1,  # inherit coercions
-	where      {          not($_ ->time_zone->isa(q/DateTime::TimeZone::Floating/))   },
-	inline_as  { (undef, "not($_\->time_zone->isa(q/DateTime::TimeZone::Floating/))") },
+	where      {          not($_ ->time_zone->is_floating)   },
+	inline_as  { (undef, "not($_\->time_zone->is_floating)") },
 	constraint_generator => sub {
 		my $zone = TimeZone->assert_coerce(shift);
 		sub { $_[0]->time_zone eq $zone };
