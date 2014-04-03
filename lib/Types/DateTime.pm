@@ -138,7 +138,7 @@ __END__
 
 =encoding utf-8
 
-=for stopwords datetime
+=for stopwords datetime timezone
 
 =head1 NAME
 
