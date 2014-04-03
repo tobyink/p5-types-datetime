@@ -5,7 +5,7 @@ use warnings;
 package Types::DateTime;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.000_01';
+our $VERSION   = '0.001';
 
 use DateTime;
 use DateTime::Duration;

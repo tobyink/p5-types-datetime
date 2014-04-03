@@ -4,3 +4,11 @@
 	issued  2014-03-17;
 	label   "Preview".
 
+`Types-DateTime 0.001 cpan:TOBYINK`
+        issued  2014-04-03;
+	changeset [
+		item "Improvements to test cases for Format."^^Tests;
+		item "Allow DateTime to be coerced from a hashref { epoch => $t }."^^Change;
+		item "Minor improvements to the documentation."^^Documentation;
+	].
+
