@@ -31,7 +31,7 @@ enum(Now, ['now']);
 
 coerce DateTime,
 	from Num,     q{ 'DateTime'->from_epoch(epoch => $_) },
-	from HashRef, q{ 'DateTime'->new(%{$_}) },
+	from HashRef, q{ exists($_->{epoch}) ? 'DateTime'->from_epoch(%$_) : 'DateTime'->new(%{$_}) },
 	from Now,     q{ 'DateTime'->now },
 	from InstanceOf['DateTime::Tiny'], q{ $_->DateTime };
 
@@ -183,7 +183,8 @@ precision, see L<DateTime> for details.
 
 =item from C<HashRef>
 
-Calls L<DateTime/new> with the hash entries as arguments.
+Calls L<DateTime/new> or L<DateTime/from_epoch> as appropriate, passing
+the hash as arguments.
 
 =item from C<Now>
 
@@ -314,7 +315,9 @@ For example:
 Or:
 
    DateTimeUTC->plus_coercions(
-      DateTime::Format::Natural->new(lang => 'en')
+      Format[
+         DateTime::Format::Natural->new(lang => 'en')
+      ]
    )
 
 =item C<< Strftime[`a] >>
@@ -329,7 +332,7 @@ L<DateTime/strftime>.
 A coercion for serializing a DateTime object into a string using
 L<DateTime/iso8601>.
 
-   Str->plus_coercions(ToISO8601);
+   Str->plus_coercions( ToISO8601 );
 
 =back
 
