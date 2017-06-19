@@ -5,10 +5,20 @@
 	label   "Preview".
 
 `Types-DateTime 0.001 cpan:TOBYINK`
-        issued  2014-04-03;
+	issued  2014-04-03;
 	changeset [
 		item "Improvements to test cases for Format."^^Tests;
 		item "Allow DateTime to be coerced from a hashref { epoch => $t }."^^Change;
 		item "Minor improvements to the documentation."^^Documentation;
+	].
+
+`Types-DateTime 0.002 cpan:TOBYINK`
+	issued  2017-06-19;
+	changeset [
+		item [
+			a dcs:Update;
+			dcs:blame cpan:DROLSKY, cpan:ILMARI;
+			label "Compatibility fixed for newer DateTime::Locale.";
+		];
 	].
 

@@ -7,3 +7,8 @@ cpan:TOBYINK
 	:page  <https://metacpan.org/author/TOBYINK>;
 	:mbox  <mailto:tobyink@cpan.org>.
 
+cpan:DROLSKY
+	:name  "Dave Rolsky".
+
+cpan:ILMARI
+	:name  "Dagfinn Ilmari Mannsåker".
