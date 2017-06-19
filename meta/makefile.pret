@@ -3,6 +3,7 @@
 @prefix : <http://ontologi.es/doap-deps#>.
 
 `Types-DateTime`
+	:runtime-requirement    [ :on "perl 5.008"^^:CpanId ];
 	:runtime-requirement    [ :on "Type::Tiny 0.041"^^:CpanId ];
 	:runtime-requirement    [ :on "DateTime"^^:CpanId ];
 	:runtime-requirement    [ :on "DateTime::Duration"^^:CpanId ];
