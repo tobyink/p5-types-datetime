@@ -26,7 +26,8 @@ use Type::Utils;
 class_type(DateTime, { class => 'DateTime' });
 class_type(Duration, { class => 'DateTime::Duration' });
 class_type(TimeZone, { class => 'DateTime::TimeZone' });
-class_type(Locale,   { class => 'DateTime::Locale::root' });
+declare Locale,
+        as InstanceOf['DateTime::Locale::root','DateTime::Locale::FromData'];
 enum(Now, ['now']);
 
 coerce DateTime,
