@@ -20,6 +20,7 @@ use Type::Library -base, -declare => qw(
 );
 use Types::Standard qw( Num Str HashRef InstanceOf );
 use Type::Utils;
+use XString ();
 
 # This stuff for compat with MooseX::Types::DateTime
 
@@ -114,7 +115,7 @@ __PACKAGE__->meta->add_coercion({
 	type_constraint    => Str,
 	coercion_generator => sub {
 		my ($self, $target, $format) = @_;
-		my $format_quoted = B::perlstring($format);
+		my $format_quoted = XString::perlstring($format);
 		return (
 			DateTime->coercibles,
 			qq{\$_->strftime($format_quoted)},
